@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <button>Click to submit</button>
+<script>
+  let btn = document.querySelector('button');
+
+  btn.addEventListener('click' ,foo);
+  function foo(){
+    alert("submitted");
+    btn.innerHTML = '';
+  }
+</script>
+</body>
+</html>
