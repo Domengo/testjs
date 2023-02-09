@@ -6,6 +6,16 @@
 </head>
 <body>
  <button>Click to submit</button>
+ <div>
+     <h1>Mangoes</h1>
+ </div>
+
+ <ul id-“list”>
+     <li><a href= ”about.html”‌class = ”list_one”>About</a></li>
+     <li><a href= ”policy.html”> Policy</a></li>
+     <li><a href= ”map.html”> Map</a></li>
+     <li><a href= ”Refund.html”> Refund</a></li>
+ </ul>
 <script>
   let bt = document.querySelector('button');
 
@@ -14,6 +24,17 @@
     alert("submitted");
     bt.innerHTML = '';
   }
+  let h2 = document.createElement( 'h2' );
+  let h1 = document.querySelector( 'h1' );
+  let div = document.querySelector( 'div' );
+  h2.textContent = 'Apple';
+  div.insertBefore(h1, h2);
+/*
+for unordered list
+ */
+  var list = document.getElementsById( “site-list” );
+
+  var firstItem = list.childNodes[0].childNodes[0];
 </script>
 </body>
 </html>
