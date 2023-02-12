@@ -13,7 +13,6 @@
         box-sizing: border-box;
       }
     </style>
-    <link rel="stylesheet" href="../styles.css" />
   </head>
 
   <body>
@@ -35,36 +34,36 @@
     const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
 
     fetch(requestURL)
-    .then(response => response.text())
-    .then(text => displayCatInfo(text))
+      .then(response => response.json())
+      .then(jsonData => displayCatInfo(jsonData))
 
-    function displayCatInfo(catString) {
+    function displayCatInfo(catData) {
       let total = 0;
       let male = 0;
 
       // Add your code here
-      let cats = json(text);
+      let cats = catData;
 
-  cats.forEach((cat, index) => {
-    motherInfo += `${cat.name}`;
-    if (index === cats.length - 2) {
-      motherInfo += " and ";
-    } else if (index === cats.length - 1) {
-      motherInfo += ".";
-    } else {
-      motherInfo += ", ";
-    }
+      cats.forEach((cat, index) => {
+        motherInfo += `${cat.name}`;
+        if (index === cats.length - 2) {
+          motherInfo += " and ";
+        } else if (index === cats.length - 1) {
+          motherInfo += ".";
+        } else {
+          motherInfo += ", ";
+        }
 
-    cat.kittens.forEach((kitten) => {
-      total++;
-      if (kitten.gender === "m") {
-        male++;
-      }
-    });
-  });
+        cat.kittens.forEach((kitten) => {
+          total++;
+          if (kitten.gender === "m") {
+            male++;
+          }
+        });
+      });
 
-  kittenInfo = `There are ${total} kittens in total, with ${male} male and ${total -
-    male} female.`;
+      kittenInfo = `There are ${total} kittens in total, with ${male} male and ${total -
+        male} female.`;
 
       // Don't edit the code below here!
 
@@ -75,7 +74,6 @@
     section.appendChild(para1);
     section.appendChild(para2);
 
-    displayCatInfo();
   </script>
 
 </html>
